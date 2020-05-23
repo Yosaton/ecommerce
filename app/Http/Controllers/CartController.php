@@ -56,6 +56,7 @@ class CartController extends Controller
     }
 
     /**
+<<<<<<< HEAD
      * Display the specified resource.
      *
      * @param  int  $id
@@ -78,6 +79,8 @@ class CartController extends Controller
     }
 
     /**
+=======
+>>>>>>> 983ed292933fab690c9448f5e66fb0aaa37c93c8
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

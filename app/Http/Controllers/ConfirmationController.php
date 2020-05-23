@@ -13,6 +13,7 @@ class ConfirmationController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
 
         if(! session()->has('success_message')){
             return redirect('/');
@@ -86,3 +87,12 @@ class ConfirmationController extends Controller
         //
     }
 }
+=======
+        if (! session()->has('success_message')) {
+            return redirect('/');
+        }
+
+        return view('thankyou');
+    }
+}
+>>>>>>> 983ed292933fab690c9448f5e66fb0aaa37c93c8

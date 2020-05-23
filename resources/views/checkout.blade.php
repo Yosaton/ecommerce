@@ -3,6 +3,13 @@
 @section('title', 'Checkout')
 
 @section('extra-css')
+    <style>
+        .mt-32 {
+            margin-top: 32px;
+        }
+    </style>
+
+    <script src="https://js.stripe.com/v3/"></script>
 
 <script src="https://js.stripe.com/v3/"></script>
 
@@ -94,12 +101,34 @@
                     </div> <!-- end form-group -->
 
 
+                        <!-- Used to display form errors -->
+                        <div id="card-errors" role="alert"></div>
+                    </div>
                     <div class="spacer"></div>
 
                     <button type="submit" class="button-primary full-width" id="complete-order">Complete Order</button>
 
 
                 </form>
+
+                @if ($paypalToken)
+                    <div class="mt-32">or</div>
+                    <div class="mt-32">
+                        <h2>Pay with PayPal</h2>
+
+                        <form method="post" id="paypal-payment-form" action="{{ route('checkout.paypal') }}">
+                            @csrf
+                            <section>
+                                <div class="bt-drop-in-wrapper">
+                                    <div id="bt-dropin"></div>
+                                </div>
+                            </section>
+
+                            <input id="nonce" name="payment_method_nonce" type="hidden" />
+                            <button class="button-primary" type="submit"><span>Pay with PayPal</span></button>
+                        </form>
+                    </div>
+                @endif
             </div>
 
 
@@ -142,7 +171,6 @@
                         <span class="checkout-totals-total">{{Cart::total()}} </span>
                     </div>
                 </div> <!-- end checkout-totals -->
-
             </div>
 
         </div> <!-- end checkout-section -->

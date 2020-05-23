@@ -3,7 +3,6 @@
 @section('title', 'Products')
 
 @section('extra-css')
-
 @endsection
 
 @section('content')

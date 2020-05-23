@@ -56,4 +56,8 @@ function getStockLevel($quantity)
     }
 
     return $stockLevel;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 983ed292933fab690c9448f5e66fb0aaa37c93c8
